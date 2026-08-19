@@ -346,10 +346,12 @@ html, body {
     }
     .card-frame {
         max-width: 100% !important;
-        background-size: cover !important; /* Keeps proper image proportions without stretching */
-        aspect-ratio: 4 / 3; /* Maintains a clean structural shape on mobile */
+        /* Forces the background image to contain entirely within the screen, keeping outer items visible */
+        background-size: contain !important; 
+        background-color: #f4efe6 !important;
+        aspect-ratio: 16 / 11; 
         height: auto !important;
-        padding: 14px !important;
+        padding: 18px !important;
     }
     .widget-container {
         height: 100% !important;
