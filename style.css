@@ -29,7 +29,7 @@ html, body {
 }
 
 /* ==========================
-   CARD FRAME CONTAINER (~610px × 450px footprint)
+   CARD FRAME CONTAINER
 ========================== */
 .card-frame {
     background-image: url('background.png'); 
@@ -40,7 +40,6 @@ html, body {
     max-width: 630px;
     height: auto;
     min-height: 440px;
-    max-height: 470px;
     padding: 22px;
     border-radius: 24px;
     border: 1px solid rgba(135, 125, 110, 0.3);
@@ -52,7 +51,7 @@ html, body {
 }
 
 .widget-container {
-    background-color: #12261b; /* Deep forest green primary background */
+    background-color: #12261b;
     width: 100%;
     height: 100%;
     border-radius: 14px;
@@ -115,7 +114,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 4px;
+    gap: 6px;
 }
 
 .selector-group {
@@ -146,7 +145,7 @@ html, body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 8.5px;
     font-weight: 500;
-    padding: 2px 6px;
+    padding: 3px 7px;
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -174,11 +173,11 @@ html, body {
     letter-spacing: 0.8px;
     text-transform: uppercase;
     width: 100%;
-    padding: 5px;
+    padding: 6px;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.2s ease;
-    margin-top: 2px;
+    margin-top: 4px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
@@ -208,7 +207,7 @@ html, body {
     background: rgba(16, 36, 25, 0.85);
     border: 1px solid rgba(135, 150, 135, 0.18);
     border-radius: 10px;
-    padding: 8px 10px;
+    padding: 10px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -254,7 +253,7 @@ html, body {
 
 .result-state {
     justify-content: space-between;
-    padding: 8px 10px;
+    padding: 10px;
 }
 
 .result-header {
@@ -262,8 +261,8 @@ html, body {
     justify-content: space-between;
     align-items: baseline;
     border-bottom: 1px solid rgba(135, 150, 135, 0.15);
-    padding-bottom: 3px;
-    margin-bottom: 3px;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
 }
 
 .result-header h3 {
@@ -285,15 +284,15 @@ html, body {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    margin: 2px 0;
+    gap: 3px;
+    margin: 3px 0;
 }
 
 .outfit-list li {
     font-size: 8px;
     color: #f8f4ec;
     background: rgba(10, 24, 16, 0.5);
-    padding: 2px 6px;
+    padding: 3px 6px;
     border-radius: 6px;
     border: 1px solid rgba(135, 150, 135, 0.1);
     display: flex;
@@ -304,12 +303,12 @@ html, body {
 .style-tip-box {
     background: rgba(135, 150, 135, 0.1);
     border-left: 2px solid #879b7d;
-    padding: 3px 6px;
+    padding: 4px 6px;
     border-radius: 0 6px 6px 0;
     font-size: 7px;
     color: #d1c7b7;
     line-height: 1.2;
-    margin: 2px 0;
+    margin: 3px 0;
 }
 
 .style-tip-box strong {
@@ -324,7 +323,7 @@ html, body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 7px;
     font-weight: 500;
-    padding: 3px;
+    padding: 4px;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -348,15 +347,16 @@ html, body {
         max-width: 100% !important;
         background-size: cover !important;
         background-position: center !important;
-        height: 380px !important;
-        padding: 16px !important;
+        height: auto !important;
+        min-height: 420px !important;
+        padding: 12px !important;
     }
     .widget-container {
-        height: 100% !important;
-        padding: 10px 12px !important;
+        height: auto !important;
+        padding: 12px !important;
     }
     .content-grid {
         grid-template-columns: 1fr !important;
-        gap: 6px;
+        gap: 10px;
     }
 }
