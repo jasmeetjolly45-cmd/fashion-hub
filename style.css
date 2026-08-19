@@ -8,7 +8,7 @@
 }
 
 html, body {
-    background-color: #f4efe6; /* Outer beige aesthetic background */
+    background-color: #f4efe6;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -32,18 +32,19 @@ html, body {
    CARD FRAME CONTAINER (~610px × 450px footprint)
 ========================== */
 .card-frame {
-    background-color: #f5f0e6;
+    background-image: url('background.png'); /* References background.png image file */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
     max-width: 630px;
     height: auto;
     min-height: 440px;
     max-height: 470px;
-    padding: 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(135, 125, 110, 0.2);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+    padding: 22px;
+    border-radius: 24px;
+    border: 1px solid rgba(135, 125, 110, 0.3);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,7 +98,7 @@ html, body {
 }
 
 /* ==========================
-   CONTENT GRID (Two Columns)
+   CONTENT GRID
 ========================== */
 .content-grid {
     display: grid;
@@ -129,7 +130,7 @@ html, body {
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #a3b899; /* Olive-green accent */
+    color: #a3b899;
 }
 
 .pill-container {
@@ -138,7 +139,6 @@ html, body {
     gap: 3px;
 }
 
-/* PILL BUTTONS */
 .pill-btn {
     background: rgba(18, 42, 28, 0.6);
     border: 1px solid rgba(135, 150, 135, 0.2);
@@ -158,13 +158,12 @@ html, body {
 }
 
 .pill-btn.active {
-    background: #6e8863; /* Muted sage green */
+    background: #6e8863;
     border-color: rgba(255, 255, 255, 0.25);
     color: #f8f4ec;
     font-weight: 600;
 }
 
-/* GENERATE BUTTON */
 .generate-btn {
     background: #6e8863;
     color: #f8f4ec;
@@ -220,7 +219,6 @@ html, body {
     display: none !important;
 }
 
-/* DEFAULT STATE STYLING */
 .default-state {
     text-align: center;
     border-style: dashed;
@@ -254,7 +252,6 @@ html, body {
     max-width: 190px;
 }
 
-/* RESULT STATE STYLING */
 .result-state {
     justify-content: space-between;
     padding: 10px 12px;
@@ -320,7 +317,6 @@ html, body {
     font-weight: 600;
 }
 
-/* REGENERATE BUTTON */
 .regenerate-btn {
     background: rgba(18, 42, 28, 0.8);
     border: 1px solid rgba(135, 150, 135, 0.25);
@@ -352,7 +348,7 @@ html, body {
         max-width: 100% !important;
         max-height: none !important;
         height: auto !important;
-        padding: 10px !important;
+        padding: 12px !important;
     }
     .widget-container {
         height: auto !important;
