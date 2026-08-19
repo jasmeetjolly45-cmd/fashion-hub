@@ -346,12 +346,10 @@ html, body {
     }
     .card-frame {
         max-width: 100% !important;
-        /* Forces the background image to contain entirely within the screen, keeping outer items visible */
-        background-size: contain !important; 
-        background-color: #f4efe6 !important;
-        aspect-ratio: 16 / 11; 
-        height: auto !important;
-        padding: 18px !important;
+        background-size: cover !important;
+        background-position: center !important;
+        height: 380px !important;
+        padding: 16px !important;
     }
     .widget-container {
         height: 100% !important;
