@@ -1,73 +1,118 @@
-<div class="card-frame">
-    <div class="widget-container">
-        <div class="widget-header">
-            <div class="header-title-row">
-                <span class="header-icon">✨</span>
-                <h1>Outfit Formula</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Formula Generator</title>
+    <!-- Google Fonts: Editorial Serif & Clean Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card-frame">
+        <main class="widget-container">
+            
+            <!-- HEADER SECTION -->
+            <header class="widget-header">
+                <div class="header-title-row">
+                    <span class="header-icon">✨</span>
+                    <h1>Outfit Formula</h1>
+                </div>
+                <p class="subtitle">Build a look without overthinking it.</p>
+            </header>
+
+            <!-- MAIN INTERACTIVE CONTENT AREA -->
+            <div class="content-grid" id="mainContentGrid">
+                
+                <!-- SELECTION PANEL -->
+                <section class="selectors-panel">
+                    
+                    <!-- OCCASION -->
+                    <div class="selector-group">
+                        <span class="selector-label">Occasion</span>
+                        <div class="pill-container" id="occasionGroup">
+                            <button class="pill-btn" data-category="occasion" data-value="Casual">Casual</button>
+                            <button class="pill-btn" data-category="occasion" data-value="Work">Work</button>
+                            <button class="pill-btn" data-category="occasion" data-value="Date Night">Date Night</button>
+                            <button class="pill-btn" data-category="occasion" data-value="Dinner">Dinner</button>
+                            <button class="pill-btn" data-category="occasion" data-value="Travel">Travel</button>
+                            <button class="pill-btn" data-category="occasion" data-value="Wedding">Wedding</button>
+                            <button class="pill-btn" data-category="occasion" data-value="Brunch">Brunch</button>
+                        </div>
+                    </div>
+
+                    <!-- VIBE -->
+                    <div class="selector-group">
+                        <span class="selector-label">Vibe</span>
+                        <div class="pill-container" id="vibeGroup">
+                            <button class="pill-btn" data-category="vibe" data-value="Minimal">Minimal</button>
+                            <button class="pill-btn" data-category="vibe" data-value="Classic">Classic</button>
+                            <button class="pill-btn" data-category="vibe" data-value="Feminine">Feminine</button>
+                            <button class="pill-btn" data-category="vibe" data-value="Chic">Chic</button>
+                            <button class="pill-btn" data-category="vibe" data-value="Edgy">Edgy</button>
+                            <button class="pill-btn" data-category="vibe" data-value="Relaxed">Relaxed</button>
+                        </div>
+                    </div>
+
+                    <!-- WEATHER -->
+                    <div class="selector-group">
+                        <span class="selector-label">Weather</span>
+                        <div class="pill-container" id="weatherGroup">
+                            <button class="pill-btn" data-category="weather" data-value="Hot">☀️ Hot</button>
+                            <button class="pill-btn" data-category="weather" data-value="Mild">🌤 Mild</button>
+                            <button class="pill-btn" data-category="weather" data-value="Cold">❄️ Cold</button>
+                            <button class="pill-btn" data-category="weather" data-value="Rainy">🌧 Rainy</button>
+                        </div>
+                    </div>
+
+                    <!-- GENERATE ACTION BUTTON -->
+                    <button class="generate-btn" id="generateBtn" disabled>
+                        ✨ Generate Look
+                    </button>
+                </section>
+
+                <!-- DISPLAY PANEL -->
+                <section class="display-panel">
+                    
+                    <!-- DEFAULT STATE -->
+                    <div class="state-card default-state" id="defaultState">
+                        <div class="default-content">
+                            <span class="default-icon">🪞</span>
+                            <h3>Create your look</h3>
+                            <p>Choose an occasion, vibe, and weather to generate a tailored outfit formula.</p>
+                        </div>
+                    </div>
+
+                    <!-- RESULT STATE -->
+                    <div class="state-card result-state hidden" id="resultState">
+                        <div class="result-header">
+                            <h3>Your Look</h3>
+                            <span class="recipe-tags" id="recipeTags">Casual • Minimal • Mild</span>
+                        </div>
+
+                        <ul class="outfit-list" id="outfitList">
+                            <!-- Populated dynamically via JS -->
+                        </ul>
+
+                        <div class="style-tip-box" id="styleTipBox">
+                            <strong>Style tip:</strong> <span id="styleTipText">Keep the accessories minimal and let the clean silhouette do the work.</span>
+                        </div>
+
+                        <button class="regenerate-btn" id="regenerateBtn" type="button">
+                            ↻ Generate Another Look
+                        </button>
+                    </div>
+
+                </section>
+
             </div>
-            <p class="subtitle">Build a look without overthinking it.</p>
-        </div>
 
-        <div class="content-wrapper">
-            <!-- Selectors Panel -->
-            <div class="selectors-panel">
-                <!-- Occasion -->
-                <div class="selector-group">
-                    <span class="selector-label">Occasion</span>
-                    <div class="pill-container">
-                        <button class="pill-btn" data-category="occasion" data-value="Casual">Casual</button>
-                        <button class="pill-btn" data-category="occasion" data-value="Work">Work</button>
-                        <button class="pill-btn" data-category="occasion" data-value="Date Night">Date Night</button>
-                        <button class="pill-btn" data-category="occasion" data-value="Dinner">Dinner</button>
-                        <button class="pill-btn" data-category="occasion" data-value="Travel">Travel</button>
-                        <button class="pill-btn" data-category="occasion" data-value="Wedding">Wedding</button>
-                        <button class="pill-btn" data-category="occasion" data-value="Brunch">Brunch</button>
-                    </div>
-                </div>
-
-                <!-- Vibe -->
-                <div class="selector-group">
-                    <span class="selector-label">Vibe</span>
-                    <div class="pill-container">
-                        <button class="pill-btn" data-category="vibe" data-value="Minimal">Minimal</button>
-                        <button class="pill-btn" data-category="vibe" data-value="Classic">Classic</button>
-                        <button class="pill-btn" data-category="vibe" data-value="Feminine">Feminine</button>
-                        <button class="pill-btn" data-category="vibe" data-value="Chic">Chic</button>
-                        <button class="pill-btn" data-category="vibe" data-value="Edgy">Edgy</button>
-                        <button class="pill-btn" data-category="vibe" data-value="Relaxed">Relaxed</button>
-                    </div>
-                </div>
-
-                <!-- Weather -->
-                <div class="selector-group">
-                    <span class="selector-label">Weather</span>
-                    <div class="pill-container">
-                        <button class="pill-btn" data-category="weather" data-value="Hot">☀️ Hot</button>
-                        <button class="pill-btn" data-category="weather" data-value="Mild">🌤️ Mild</button>
-                        <button class="pill-btn" data-category="weather" data-value="Cold">❄️ Cold</button>
-                        <button class="pill-btn" data-category="weather" data-value="Rainy">🌧️ Rainy</button>
-                    </div>
-                </div>
-
-                <button id="generateBtn" class="generate-btn" disabled>✨ Generate Look</button>
-            </div>
-
-            <!-- Display Panel -->
-            <div class="display-panel">
-                <!-- Default State -->
-                <div id="defaultState" class="state-card default-state">
-                    <div class="default-content">
-                        <span class="default-icon">🪞</span>
-                        <h3>Create your look</h3>
-                        <p>Choose an occasion, vibe, and weather to generate a tailored outfit formula.</p>
-                    </div>
-                </div>
-
-                <!-- Result State (Hidden by default) -->
-                <div id="resultState" class="state-card result-state hidden">
-                    <!-- Populated dynamically via JS -->
-                </div>
-            </div>
-        </div>
+        </main>
     </div>
-</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
