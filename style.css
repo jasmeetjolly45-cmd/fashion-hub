@@ -32,7 +32,7 @@ html, body {
    CARD FRAME CONTAINER (~610px × 450px footprint)
 ========================== */
 .card-frame {
-    background-image: url('background.png'); /* References background.png image file */
+    background-image: url('background.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -346,15 +346,17 @@ html, body {
     }
     .card-frame {
         max-width: 100% !important;
-        max-height: none !important;
+        /* Forces the entire background image to scale down cleanly on mobile without cropping */
+        background-size: 100% 100% !important; 
+        aspect-ratio: 16 / 11; 
         height: auto !important;
         padding: 12px !important;
     }
     .widget-container {
-        height: auto !important;
+        height: 100% !important;
     }
     .content-grid {
         grid-template-columns: 1fr !important;
-        gap: 10px;
+        gap: 6px;
     }
 }
