@@ -1,6 +1,3 @@
-/* ==========================
-   RESET & BASE STYLING
-========================== */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +7,7 @@
 html, body {
     background-color: #f4efe6;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 12px;
     display: flex;
@@ -18,7 +15,6 @@ html, body {
     align-items: center;
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: #f8f4ec;
-    overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -28,9 +24,7 @@ html, body {
     }
 }
 
-/* ==========================
-   CARD FRAME CONTAINER
-========================== */
+/* Outer Card Frame */
 .card-frame {
     background-image: url('background.png'); 
     background-size: cover;
@@ -38,94 +32,64 @@ html, body {
     background-repeat: no-repeat;
     width: 100%;
     max-width: 630px;
-    height: auto;
-    min-height: 440px;
-    padding: 22px;
+    padding: 20px;
     border-radius: 24px;
     border: 1px solid rgba(135, 125, 110, 0.3);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
 }
 
+/* Inner Widget Box */
 .widget-container {
     background-color: #12261b;
     width: 100%;
-    height: 100%;
     border-radius: 14px;
     border: 1px solid rgba(135, 150, 135, 0.15);
-    padding: 14px 16px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 12px;
 }
 
-/* ==========================
-   HEADER SECTION
-========================== */
-.widget-header {
-    margin-bottom: 6px;
-}
-
-.header-title-row {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.header-icon {
-    font-size: 13px;
-}
-
+/* Header */
 .widget-header h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
-    letter-spacing: 0.5px;
     color: #f8f4ec;
-    line-height: 1.1;
 }
 
 .subtitle {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 10.5px;
+    font-size: 11px;
     color: #d1c7b7;
-    margin-top: 1px;
 }
 
-/* ==========================
-   CONTENT GRID
-========================== */
-.content-grid {
+/* Desktop Grid Layout */
+.content-wrapper {
     display: grid;
     grid-template-columns: 1.1fr 1fr;
-    gap: 12px;
-    flex: 1;
-    min-height: 0;
+    gap: 14px;
 }
 
-/* ==========================
-   SELECTORS PANEL
-========================== */
 .selectors-panel {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 6px;
+    gap: 8px;
 }
 
 .selector-group {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
 }
 
 .selector-label {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 9.5px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -135,31 +99,22 @@ html, body {
 .pill-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 3px;
+    gap: 4px;
 }
 
 .pill-btn {
     background: rgba(18, 42, 28, 0.6);
     border: 1px solid rgba(135, 150, 135, 0.2);
     color: #f8f4ec;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 8.5px;
-    font-weight: 500;
-    padding: 3px 7px;
+    font-size: 9px;
+    padding: 3px 8px;
     border-radius: 20px;
     cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.pill-btn:hover {
-    border-color: rgba(135, 150, 135, 0.4);
-    background: rgba(135, 150, 135, 0.1);
 }
 
 .pill-btn.active {
     background: #6e8863;
-    border-color: rgba(255, 255, 255, 0.25);
-    color: #f8f4ec;
+    border-color: rgba(255, 255, 255, 0.3);
     font-weight: 600;
 }
 
@@ -167,47 +122,33 @@ html, body {
     background: #6e8863;
     color: #f8f4ec;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.8px;
     text-transform: uppercase;
     width: 100%;
-    padding: 6px;
+    padding: 7px;
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.2s ease;
     margin-top: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-.generate-btn:hover:not(:disabled) {
-    background: #7d9672;
-    transform: translateY(-1px);
 }
 
 .generate-btn:disabled {
     background: rgba(110, 136, 99, 0.35);
     color: rgba(248, 244, 236, 0.4);
-    border-color: transparent;
     cursor: not-allowed;
-    box-shadow: none;
 }
 
-/* ==========================
-   DISPLAY PANEL CARDS
-========================== */
+/* Display Cards */
 .display-panel {
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
 .state-card {
     background: rgba(16, 36, 25, 0.85);
     border: 1px solid rgba(135, 150, 135, 0.18);
     border-radius: 10px;
-    padding: 10px;
+    padding: 12px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -221,142 +162,50 @@ html, body {
 .default-state {
     text-align: center;
     border-style: dashed;
-    border-color: rgba(135, 150, 135, 0.25);
 }
 
 .default-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-    padding: 6px;
+    gap: 6px;
 }
 
 .default-icon {
-    font-size: 16px;
-    margin-bottom: 2px;
+    font-size: 18px;
 }
 
 .default-state h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 13px;
     color: #f8f4ec;
 }
 
 .default-state p {
-    font-size: 8px;
+    font-size: 9px;
     color: #d1c7b7;
-    line-height: 1.3;
-    max-width: 180px;
-}
-
-.result-state {
-    justify-content: space-between;
-    padding: 10px;
-}
-
-.result-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    border-bottom: 1px solid rgba(135, 150, 135, 0.15);
-    padding-bottom: 4px;
-    margin-bottom: 4px;
-}
-
-.result-header h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 11px;
-    font-weight: 600;
-    color: #f8f4ec;
-    letter-spacing: 0.5px;
-}
-
-.recipe-tags {
-    font-size: 6.5px;
-    color: #a3b899;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-}
-
-.outfit-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    margin: 3px 0;
-}
-
-.outfit-list li {
-    font-size: 8px;
-    color: #f8f4ec;
-    background: rgba(10, 24, 16, 0.5);
-    padding: 3px 6px;
-    border-radius: 6px;
-    border: 1px solid rgba(135, 150, 135, 0.1);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.style-tip-box {
-    background: rgba(135, 150, 135, 0.1);
-    border-left: 2px solid #879b7d;
-    padding: 4px 6px;
-    border-radius: 0 6px 6px 0;
-    font-size: 7px;
-    color: #d1c7b7;
-    line-height: 1.2;
-    margin: 3px 0;
-}
-
-.style-tip-box strong {
-    color: #a3b899;
-    font-weight: 600;
-}
-
-.regenerate-btn {
-    background: rgba(18, 42, 28, 0.8);
-    border: 1px solid rgba(135, 150, 135, 0.25);
-    color: #f8f4ec;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 7px;
-    font-weight: 500;
-    padding: 4px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-align: center;
-    width: 100%;
-}
-
-.regenerate-btn:hover {
-    background: #6e8863;
-    border-color: rgba(255, 255, 255, 0.2);
+    line-height: 1.4;
 }
 
 /* ==========================
-   RESPONSIVE MOBILE BREAKPOINT
+   MOBILE FIX (Screens < 520px)
 ========================== */
 @media (max-width: 520px) {
-    html, body {
-        padding: 4px;
-    }
     .card-frame {
-        max-width: 100% !important;
-        background-size: cover !important;
-        background-position: center !important;
-        height: auto !important;
-        min-height: 420px !important;
-        padding: 12px !important;
+        padding: 12px;
     }
+    
     .widget-container {
-        height: auto !important;
-        padding: 12px !important;
+        padding: 12px;
     }
-    .content-grid {
-        grid-template-columns: 1fr !important;
-        gap: 10px;
+
+    /* Force single column so elements never overlap */
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .state-card {
+        min-height: 130px;
     }
 }
